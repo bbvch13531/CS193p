@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]! //Array<UIButton> 와 같음
     
-
+    
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender){
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
         } else {
             print("chosen card was not in cardButtons")
         }
-        
     }
     func updateViewFromModel(){
         for index in cardButtons.indices {
@@ -49,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     func flipCard(withEmoji emoji: String, on button: UIButton){
-//        print("flipCard(withEmoji: \(emoji)")
+        //        print("flipCard(withEmoji: \(emoji)")
         if button.currentTitle == emoji {
             button.setTitle("", for: UIControlState.normal)
             button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
@@ -60,7 +59,8 @@ class ViewController: UIViewController {
     }
     
     var emojiChoices = ["🎃","👻","🍭","🍎","🦇","🥝","🦋","🌳","⚽️"]
-    
+    // MARK: aasd
+    // TODO: aaaa
     //var emoji = Dictionary<Int, String>()
     var emoji = [Int:String]()
     
@@ -68,18 +68,18 @@ class ViewController: UIViewController {
         // optional 벗기는 일반적인 코드
         // return 에서 ?? 를 사용한다.
         /* ex1)
-        if emoji[card.identifier] != nil {
-            return emoji[card.identifier]!
-        } else {
-            return "?"
-        }
-        */
+         if emoji[card.identifier] != nil {
+         return emoji[card.identifier]!
+         } else {
+         return "?"
+         }
+         */
         
         // ex2)
         
         if emoji[card.identifier] == nil , emojiChoices.count > 0 {
-                let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-                emoji[card.identifier] = emojiChoices.remove(at: randomIndex) // emoji 대입하고 삭제한다.
+            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
+            emoji[card.identifier] = emojiChoices.remove(at: randomIndex) // emoji 대입하고 삭제한다.
         }
         return emoji[card.identifier] ?? "?"
     }
