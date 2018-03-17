@@ -33,7 +33,6 @@ class Concentration
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
             }
-            
         }
     }
     
@@ -44,10 +43,22 @@ class Concentration
             //  cards.append(card)
             //  cards.append(card) 와 같음
         }
+        
+        for _ in 1...cards.count{
+            let randomIndex1 = Int(arc4random_uniform(UInt32(cards.count)))
+            let randomIndex2 = Int(arc4random_uniform(UInt32(cards.count)))
+            cards.swapAt(randomIndex1,randomIndex2);
+            //cards의 identifier를 random swap한다.
+            
+            print("random is \(randomIndex1) swap is \(randomIndex2)")
+        }
         //  countable range
         //  [0,number) 0..<number
         //  [1,number] 1...number
         
         // TODO: Shuffle the cards
+        
     }
+   
 }
+
