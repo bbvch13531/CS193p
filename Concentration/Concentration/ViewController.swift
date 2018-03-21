@@ -9,7 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+//    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+//    var game=Concentration(numberOfPairsOfCards:(cardButtons.count + 1) / 2)
+    
+   
+    
+    //To re-initialize lazy var
+    var game:Concentration{
+        if _game == nil {
+            print("game init")
+            _game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+        }
+        return _game!
+    }
+    var _game:Concentration?
+    
     // lazy var 은 호출되기 전까지 실행되지 않음. 늦은 초기화 하지만 didSet을 사용하지 못한다.
     var flipCount = 0 {
         didSet{
@@ -21,6 +35,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]! //Array<UIButton> 와 같음
     
+    @IBAction func newGame(_ sender: UIButton) {
+        
+        
+    }
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
