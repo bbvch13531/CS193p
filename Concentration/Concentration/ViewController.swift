@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Concentration
 //
-//  Created by KyungYoung Heo on 2018. 3. 11..
+//  Created by bbvch13531 on 2018. 3. 11..
 //  Copyright © 2018년 KyungYoung Heo. All rights reserved.
 //  Controller
 
