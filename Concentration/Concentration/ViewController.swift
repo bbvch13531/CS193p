@@ -9,18 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-//    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-//    var game=Concentration(numberOfPairsOfCards:(cardButtons.count + 1) / 2)
+    //    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    //    var game=Concentration(numberOfPairsOfCards:(cardButtons.count + 1) / 2)
     
-   
+    
     
     //To re-initialize lazy var
     var game:Concentration{
         if _game == nil {
             print("game init")
-            _game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+            _game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         }
         return _game!
+    }
+    var numberOfPairsOfCards: Int{
+        get{
+            return (cardButtons.count + 1) / 2
+        }
+        // Read-only computed value면 get 블록이 없어도 된다!
     }
     var _game:Concentration?
     
@@ -42,7 +48,7 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
-        
+
         if let cardNumber = cardButtons.index(of: sender){
             game.chooseCard(at: cardNumber) // link to model
             updateViewFromModel()
@@ -101,4 +107,3 @@ class ViewController: UIViewController {
         return emoji[card.identifier] ?? "?"
     }
 }
-
