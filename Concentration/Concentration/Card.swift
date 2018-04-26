@@ -15,9 +15,9 @@ struct Card
     var identifier: Int
     //card 는 Model이어서 UI independent해야하기 때문에 여기에 emoji나 img가 포함되지 않는다.
     
-    static var identifierFactory = 0
+    private static var identifierFactory = 0
     
-    static func getUniqueIdentifier() -> Int{
+    private static func getUniqueIdentifier() -> Int{
         identifierFactory += 1
         return identifierFactory
     }

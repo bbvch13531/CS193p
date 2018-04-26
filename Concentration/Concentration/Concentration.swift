@@ -11,9 +11,9 @@ import Foundation
 class Concentration
 {
     
-    var cards = [Card]()    //initialize with empty array of card
+    private(set) var cards = [Card]()    //initialize with empty array of card
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex : Int?
             for index in cards.indices {

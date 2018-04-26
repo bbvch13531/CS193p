@@ -15,14 +15,14 @@ class ViewController: UIViewController {
     
     
     //To re-initialize lazy var
-    var game:Concentration{
+    private var game:Concentration{
         if _game == nil {
             print("game init")
             _game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         }
         return _game!
     }
-    var numberOfPairsOfCards: Int{
+    private var numberOfPairsOfCards: Int{
         get{
             return (cardButtons.count + 1) / 2
         }
@@ -31,22 +31,22 @@ class ViewController: UIViewController {
     var _game:Concentration?
     
     // lazy var 은 호출되기 전까지 실행되지 않음. 늦은 초기화 하지만 didSet을 사용하지 못한다.
-    var flipCount = 0 {
+    private(set) var flipCount = 0 {
         didSet{
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
     
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
-    @IBOutlet var cardButtons: [UIButton]! //Array<UIButton> 와 같음
+    @IBOutlet private var cardButtons: [UIButton]! //Array<UIButton> 와 같음
     
-    @IBAction func newGame(_ sender: UIButton) {
+    @IBAction private func newGame(_ sender: UIButton) {
         
         
     }
     
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
 
         if let cardNumber = cardButtons.index(of: sender){
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             print("chosen card was not in cardButtons")
         }
     }
-    func updateViewFromModel(){
+    private func updateViewFromModel(){
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -83,13 +83,13 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiChoices = ["🎃","👻","🍭","🍎","🦇","🥝","🦋","🌳","⚽️"]
+    private var emojiChoices = ["🎃","👻","🍭","🍎","🦇","🥝","🦋","🌳","⚽️"]
     // MARK: aasd
     // TODO: aaaa
     //var emoji = Dictionary<Int, String>()
-    var emoji = [Int:String]()
+    private var emoji = [Int:String]()
     
-    func emoji (for card: Card) -> String {
+    private func emoji (for card: Card) -> String {
         // optional 벗기는 일반적인 코드
         // return 에서 ?? 를 사용한다.
         /* ex1)
