@@ -101,9 +101,24 @@ class ViewController: UIViewController {
          */
         
         if emoji[card.identifier] == nil , emojiChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex) // emoji 대입하고 삭제한다.
+            
+            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4random) // emoji 대입하고 삭제한다.
         }
         return emoji[card.identifier] ?? "?"
+    }
+}
+
+// extension 으로 코드 가독성 높이기
+extension Int {
+    var arc4random: Int {
+        if self > 0{
+            return Int(arc4random_uniform(UInt32(self)))
+        }
+        else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        }
+        else {
+            return 0
+        }
     }
 }

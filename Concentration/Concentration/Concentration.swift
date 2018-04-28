@@ -10,7 +10,6 @@ import Foundation
 
 class Concentration
 {
-    
     private(set) var cards = [Card]()    //initialize with empty array of card
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
@@ -81,8 +80,5 @@ class Concentration
         //  [1,number] 1...number
         
         // TODO: Shuffle the cards
-        
     }
-   
 }
-
