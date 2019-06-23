@@ -14,6 +14,7 @@
 		9F320BA822BDFEB8004F9DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F320BA722BDFEB8004F9DF5 /* Assets.xcassets */; };
 		9F320BAB22BDFEB8004F9DF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F320BA922BDFEB8004F9DF5 /* LaunchScreen.storyboard */; };
 		9F320BB422BE28BB004F9DF5 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F320BB322BE28BB004F9DF5 /* Concentration.swift */; };
+		9F320BB622BE33E1004F9DF5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F320BB522BE33E1004F9DF5 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9F320BAA22BDFEB8004F9DF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F320BAC22BDFEB8004F9DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F320BB322BE28BB004F9DF5 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		9F320BB522BE33E1004F9DF5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				9F320B9F22BDFEB7004F9DF5 /* ViewController.swift */,
 				9F320BA122BDFEB7004F9DF5 /* Main.storyboard */,
 				9F320BB322BE28BB004F9DF5 /* Concentration.swift */,
+				9F320BB522BE33E1004F9DF5 /* Card.swift */,
 				9F320BAC22BDFEB8004F9DF5 /* Info.plist */,
 				9F320BA422BDFEB7004F9DF5 /* NewConcentration.xcdatamodeld */,
 			);
@@ -151,6 +154,7 @@
 			files = (
 				9F320BA622BDFEB7004F9DF5 /* NewConcentration.xcdatamodeld in Sources */,
 				9F320BA022BDFEB7004F9DF5 /* ViewController.swift in Sources */,
+				9F320BB622BE33E1004F9DF5 /* Card.swift in Sources */,
 				9F320BB422BE28BB004F9DF5 /* Concentration.swift in Sources */,
 				9F320B9E22BDFEB7004F9DF5 /* AppDelegate.swift in Sources */,
 			);
